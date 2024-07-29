@@ -21,7 +21,6 @@
         android:id="@+id/nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cesta de frutas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar6"
@@ -32,7 +31,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/nome"
-        android:text="MaNgA"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:textSize="16sp" />
@@ -41,7 +39,6 @@
         android:id="@+id/valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="R$20,20"
         app:layout_constraintTop_toBottomOf="@+id/descricao"
         tools:layout_editor_absoluteX="0dp"
         android:layout_marginStart ="16dp"
