@@ -4,8 +4,12 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.orgs.R
+import com.example.orgs.model.Produtos
 import com.example.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
+import java.math.BigDecimal
 
 class MainActivity : Activity() {
 
@@ -16,18 +20,46 @@ class MainActivity : Activity() {
         val view = View(this)
         setContentView(R.layout.activity_main)
 
-//        var nome = findViewById<TextView>(R.id.nome)
-//        nome.text = "Teste"
-//
-//        var descricao = findViewById<TextView>(R.id.descricao)
-//        descricao.text = "Laranja, Magna, Limão"
-//
-//        var valor = findViewById<TextView>(R.id.valor)
-//        valor.text = "R$ 20,30"
-
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.adapter = ListaProdutosAdapter()
+        recyclerView.adapter = ListaProdutosAdapter(context = this, produto = listOf(
+            Produtos(
+                nome = "teste",
+                descricao = "para teste",
+                valor = BigDecimal("10.71")
+            ),
+            Produtos(
+                nome = "teste2",
+                descricao = "para teste2",
+                valor = BigDecimal("10.72")
+            ),
+            Produtos(
+                nome = "teste3",
+                descricao = "para teste2",
+                valor = BigDecimal("10.72")
+            ),
+            Produtos(
+                nome = "teste4",
+                descricao = "para teste2",
+                valor = BigDecimal("10.72")
+            ),
+            Produtos(
+                nome = "teste5",
+                descricao = "para teste2",
+                valor = BigDecimal("10.72")
+            ),
+            Produtos(
+                nome = "teste6",
+                descricao = "para teste2",
+                valor = BigDecimal("10.72")
+            ),
+            Produtos(
+                nome = "teste7",
+                descricao = "para teste2",
+                valor = BigDecimal("10.72")
+            )
 
+        ))
+        recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
 
