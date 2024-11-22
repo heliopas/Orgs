@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.orgs.R
+import com.example.orgs.dao.ProdutosDao
 import com.example.orgs.model.Produtos
 import com.example.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -19,27 +20,15 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         val view = View(this)
-
+        val dao = ProdutosDao()
         var recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.adapter = ListaProdutosAdapter(context = this, produto = listOf(
-            Produtos(
-                nome = "teste",
-                descricao = "para teste",
-                valor = BigDecimal("10.71")
-            ),
-            Produtos(
-                nome = "teste2",
-                descricao = "para teste2",
-                valor = BigDecimal("10.72")
-            ),
-            Produtos(
-                nome = "teste3",
-                descricao = "para teste2",
-                valor = BigDecimal("10.72")
-            )
-
-        ))
+        recyclerView.adapter = ListaProdutosAdapter(context = this, produto =dao.buscaTodos())
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val addButton = findViewById<FloatingActionButton>(R.id.addProdutoButton)
@@ -50,8 +39,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
 
     }
-
-
 
 
 

@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.orgs.R
+import com.example.orgs.dao.ProdutosDao
 import com.example.orgs.model.Produtos
 import org.w3c.dom.Text
 
@@ -34,6 +35,13 @@ class FormularioProdutoActivity : AppCompatActivity(R.layout.activity_formulario
             )
 
             Log.i("FormularioProdutoActivity", "Oncreate:$novoProduto")
+            val dao = ProdutosDao()
+            dao.adicionar(novoProduto)
+            Log.i("FormularioProdutoActivity", "Oncreate:${dao.buscaTodos()}")
+
+
+
+
         }
 
 
